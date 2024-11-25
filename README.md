@@ -1,2 +1,2 @@
-# algoritme
-Algoritmele stupide, date de Miron pentru a fi invatate NAZUBOK
+# ALGORITME
+Miron, algotime date pentru a invata NAZUBOK. Explicate fiecare in readme.
