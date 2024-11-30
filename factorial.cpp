@@ -1,8 +1,16 @@
-unsigned long long fectorial(int a) {
-    unsigned long long fact = 1;
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int a; cout << "a= "; cin >> a;
+    unsigned long long factorial = 1;
     a = abs(a);
-    for(int i = 1; i <= a; i++) {
-            fact*=i;
+    if(a>=20) {
+        for(int i = 1; i<=a; i++) {
+            factorial*=i;
         }
-        return fact;
+        cout << "Factorial de numar este" << factorial;
+    } else {
+        cout << "Factorialul este un numar foarte mare" << endl;
     }
+    return 0;
+}
