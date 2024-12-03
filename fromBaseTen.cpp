@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-double x,x1; int n,m; string S; int baza = 16;
+double x,x1; int n,m; string S; int baza = 2;
 int main() { 
     cout<<"x="; cin>>x; x=abs(x); x1=x;
     n=trunc(x);
@@ -27,6 +27,6 @@ int main() {
     }
     while (S[S.size()-1]=='0') S.erase((S.size()-1),1);
 	if (S[S.size()-1]=='.') S.erase(S.size()-1,1);
-	cout<<setprecision(20) << x1 <<" in baza 2 este = "<<S<<'\n';
+	cout << setprecision(20) << x1 <<" in baza 2 este = "<<S<<endl;
     return 0;
-   }
+}

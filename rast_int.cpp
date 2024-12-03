@@ -8,6 +8,6 @@ int main() {
         rast = rast*10 + a%10;
         a/=10;
     }
-    cout << rast;
+    cout << a1 << " rasturnat este " << rast << endl;
     return 0;
 }

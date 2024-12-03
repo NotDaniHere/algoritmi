@@ -4,7 +4,7 @@ int main() {
     int a; cout << "a= "; cin >> a;
     unsigned long long factorial = 1;
     a = abs(a);
-    if(a>=20) {
+    if(a<=20) {
         for(int i = 1; i<=a; i++) {
             factorial*=i;
         }

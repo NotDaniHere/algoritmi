@@ -5,7 +5,7 @@ int main() {
     a=abs(a);
     int suma = 0;
     for(int i = 1; i<=a; i++) {
-        if(!a%i) suma+=i;
+        if(a%i == 0) suma+=i;
     }
     cout << "Numarul de divizori =" << suma << endl;
     return 0;
