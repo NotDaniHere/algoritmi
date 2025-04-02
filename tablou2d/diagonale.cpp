@@ -1,47 +1,78 @@
 #include <iostream>
 using namespace std;
+
 int main() {
-    //Setu de diagonale care incepe din stanga sus (matrice patrata sigma)
-    int suma_stanga = 0, suma_dreapta = 0;
-    int n; cin >> n;
-    int A[n][n]; fill(*A, *A+n*n, 0);
-    //Introducere in matrice
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
+    int n;
+    cin >> n;
+    
+    int A[n][n];
+    // Initialize matrix A to 0 (if needed)
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            A[i][j] = 0;
+        }
+    }
+    
+    // Read matrix elements.
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
             cin >> A[i][j];
         }
     }
-    //Diagonala stanga
-    /*
-    Incepe de la 0,0 si termina la n,n
-    */
-    bool achievedMax = false;
-    int delta = 0;
-    int x = 0, y = 0;
-    int minusCounter = 0;
+    
+    // ======= Diagonals from bottom-left to top-right =======
+    // These are the anti-diagonals that start on the left side.
+    cout << "Diagonals from bottom-left to top-right:\n";
     for (int d = 0; d < 2 * n - 1; d++) {
         int x, y;
         if (d < n) {
-            // First half: diagonals start at (d, 0)
+            // For the first n diagonals, start on the left column.
             x = d;
             y = 0;
         } else {
-            // Second half: diagonals start at (n-1, d - (n-1))
+            // For the remaining diagonals, start on the bottom row.
             x = n - 1;
             y = d - (n - 1);
         }
         
         int currentSum = 0;
-        // Traverse the diagonal until out of matrix bounds.
+        // Traverse upward and to the right.
         while (x >= 0 && y < n) {
             currentSum += A[x][y];
-            cout << x << " " << y << "\n";
-            x--;   // move up
-            y++;   // move right
+            cout << "(" << x << ", " << y << ") ";
+            x--;
+            y++;
         }
-        cout << "Diagonala " << d << " are suma " << currentSum << "\n";
+        cout << " => Sum: " << currentSum << "\n";
     }
     
-
+    // ======= Diagonals from top-right to bottom-left =======
+    // These are the anti-diagonals that start on the right side.
+    cout << "\nDiagonals from top-right to bottom-left:\n";
+    // First, starting from the top row (rightmost to leftmost).
+    for (int startCol = n - 1; startCol >= 0; startCol--) {
+        int i = 0, j = startCol;
+        int currentSum = 0;
+        while (i < n && j >= 0) {
+            currentSum += A[i][j];
+            cout << "(" << i << ", " << j << ") ";
+            i++;
+            j--;
+        }
+        cout << " => Sum: " << currentSum << "\n";
+    }
+    // Then, starting from the right column (excluding the top corner, which is already processed).
+    for (int startRow = 1; startRow < n; startRow++) {
+        int i = startRow, j = n - 1;
+        int currentSum = 0;
+        while (i < n && j >= 0) {
+            currentSum += A[i][j];
+            cout << "(" << i << ", " << j << ") ";
+            i++;
+            j--;
+        }
+        cout << " => Sum: " << currentSum << "\n";
+    }
+    
     return 0;
 }
