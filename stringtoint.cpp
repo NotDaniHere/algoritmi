@@ -2,6 +2,7 @@
 using namespace std;
 int main() {
     string s = "-9001";
+    //alternativ, stoi(s) returneaza un int cu valoarea stringului.
     int numaru = 0; int cycle = 0;
     while(s.size() != 0) {
         if(s[s.size()-1] == '-') {
