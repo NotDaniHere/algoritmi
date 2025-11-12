@@ -1,6 +1,7 @@
 # CHEAT SHEET ALGORITMI
-Algoritmi showcased/mentionate/whatever de Miron, pentru "a fi invatate NAZUBOK".
-# Hippity Hoppity, your code is now my property
-Easy apesi pe numele algoritmului si iti deschide codul
+Algoritmi mentionati, aratati de Miron, etc.
+Contine si alti algoritmi ca sa iti faca viata mai usoara la probleme.
+# hip hop am facut punctul 5
+easy copy paste pentru 50p garantat
 
-Sorry prea multi algoritmi ca sa le scriu pe toate.
+sorry prea multi ca sa ii scriu pe absolut toti, dar aici e o buna parte oricum
